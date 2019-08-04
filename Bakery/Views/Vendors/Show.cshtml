@@ -1,7 +1,14 @@
-<h1>Order Details: </h1>
+@using Bakery.Models;
 
-<h2>@Model["order"].Description</h2>
-<h3>Vendor: @Model["vendor"].Name</h3>
+<h3>Here are all the orders for this vendor:</h3>
 
-<a href='/vendors/@Model["vendor"].Id/orders/new'>Add another order</a>
-<a href='/vendors'>View all vendors</a>
+<ol>
+@foreach (Order order in @Model["orders"])
+{
+  <li><a href='/vendors/@Model["vendor"].Id/vendors/@order.Id'>@order.Title</a></li>
+}
+</ol>
+
+<p><a href='/vendors/@Model["vendor"].Id/orders/new'>Add a new order</a></p>
+<p><a href='/vendors'>Return to vendors list</a></p>
+<p><a href='/'>Return to Main Page</a></p>

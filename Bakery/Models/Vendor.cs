@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Bakery.Models;
 
 namespace Bakery
 {
@@ -32,7 +33,7 @@ namespace Bakery
 
         public void AddOrder(Order order)
         {
-            Orders.Add(item)
+            Orders.Add(order);
         }
 
     }

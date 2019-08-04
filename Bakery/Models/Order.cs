@@ -12,9 +12,9 @@ namespace Bakery.Models
 
         public Order(string title)
         {
-           Tittle = title
+            Title = title;
            _instances.Add(this);
-           id = _instances.Count;
+           Id = _instances.Count;
         }
 
         public static List<Order> GetAll()

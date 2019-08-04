@@ -22,7 +22,7 @@ namespace Bakery.Controllers
   [HttpPost("/vendors")]
   public ActionResult Create(string vendorName)
   {
-    Category newVendor = new Vendor(vendorName);
+    Vendor newVendor = new Vendor(vendorName);
     return RedirectToAction("Index");
   }
   [HttpGet("/vendors/{id}")]
@@ -30,7 +30,7 @@ namespace Bakery.Controllers
   {
     Dictionary<string, object> model = new Dictionary<string, object>();
     Vendor selectedVendor = Vendor.Find(id);
-    List<Item> vendorItems = selectedVendor.Orders;
+    List<Order> vendorItems = selectedVendor.Orders;
     model.Add("vendor", selectedVendor);
     model.Add("orders", vendorItems);
     return View(model);
@@ -42,8 +42,8 @@ namespace Bakery.Controllers
   Vendor foundVendor = Vendor.Find(vendorId);
   Order newOrder = new Order(orderDescription);
   foundVendor.AddOrder(newOrder);
-  List<Order> categoryItems = foundVendor.Orders;
-  model.Add("orders", vendorItems);
+  List<Order> vendorOrders = foundVendor.Orders;
+  model.Add("orders", vendorOrders);
   model.Add("vendor", foundVendor);
   return View("Show", model);
     }
