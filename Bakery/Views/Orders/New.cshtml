@@ -1,6 +1,10 @@
+@{ Layout = "_Layout"; }
 <h1>Add a new to @Model.Name</h1>
 <form action="/vendors/@Model.Id/orders" method="post">
     <input id="vendorId" name="categoryId" type="hidden" value="@Model.Id"/>
+     <label for="orderTitle">Title</label>
+    <input id="orderTitle" name="orderTitle" type ="text"/>
+    
     <label for="orderDescription">Order Description</label>
     <input id="orderDescription" name="orderDescription" type ="text"/>
     <button type='submit'>Add an Order</button>

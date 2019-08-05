@@ -36,5 +36,10 @@ namespace Bakery
             Orders.Add(order);
         }
 
+        public Order FindOrder(int orderId)
+        {
+            return Orders.Find(delegate(Order i) { return i.Id == orderId; });
+        }
+
     }
 }
