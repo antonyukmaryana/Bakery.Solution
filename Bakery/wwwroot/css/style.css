@@ -1,2 +1,21 @@
 
-body {background-color: cadetblue}
+body {
+    background-image: url("/img/bakery.jpg");
+    margin: 0;
+    padding: 0;
+    background-position: center;
+    text-align: center;
+    background-size: cover;
+    width: 100%;
+    height: 400px;
+}
+.jumbotron {
+    
+    background-size: cover;
+    padding-bottom: 1px;
+    padding-top: 1px;
+    margin-bottom: 50px;
+    background-position: top;
+    font-style: italic;
+
+}
